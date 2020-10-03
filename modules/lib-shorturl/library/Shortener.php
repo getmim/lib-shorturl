@@ -13,6 +13,13 @@ class Shortener
 {
     protected static $last_shortener;
 
+    private static function getUser(): int{
+        $user_id = 0;
+        if(module_exists('lib-user') && \Mim::$app->user->isLogin())
+            $user_id = \Mim::$app->user->id;
+        return $user_id;
+    }
+
     static function lastError(): ?string{
         if(!self::$last_shortener)
             return null;
