@@ -19,7 +19,12 @@ return [
                 'lib-model' => NULL
             ]
         ],
-        'optional' => []
+        'optional' => [
+            [
+                'lib-shorturl-s-id' => NULL,
+                'lib-shorturl-bitly' => NULL
+            ]
+        ]
     ],
     'autoload' => [
         'classes' => [

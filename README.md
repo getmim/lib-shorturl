@@ -28,6 +28,19 @@ if(!$short_url)
 ## Shortener
 
 Module ini harus memiliki library shortener yang bertugas memendekan URL panjang.
+Tambahkan konfigurasi seperti di bawah pada module shortener untuk mendaftarkan
+diri sebagai url shortener:
+
+```php
+return [
+    'libShortURL' => [
+        'shorteners' => [
+            '/name/' => 'Namespace\\Class'
+        ]
+    ]
+];
+```
+
 Library tersebut harus mengimplementasikan interface `LibShorturl\Iface\Shortener`
 sehingga library tersebut memiliki method sebagai berikut:
 
